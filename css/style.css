@@ -1,0 +1,146 @@
+:root 
+   {
+
+    /* Colors: */
+    --white: #FFFFFF;
+    --orange: #FF950A;
+    --black: #131313;
+    
+    /* Font/text values */
+    --secondary-font: Roboto;
+    --principal-font: Times New Roman;
+    --font-style-light: Light;
+    --font-style-medium: Medium;
+    --font-style-regular: Regular;
+    --font-size-body: 18px;
+    --font-size-button: 20px;
+    --font-title-size: 70px;
+    --line-spacing: 40px;
+    }
+    
+    /* Character Styles */
+
+
+    body
+    {
+        background-size: contain;
+        background: linear-gradient( rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8) ), url(../images/render.png);
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+    header
+    {  
+        
+        height: 60px;
+        background: var(--black) 0% 0%  padding-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 80px;
+        position: fixed;
+        top: 0;
+		right: 0;
+        left: 0;
+    }
+
+    .page-container
+    {
+        display: flex;
+        align-items: flex-start;
+       margin:108px 80px;
+    }
+
+    .menu_link
+    {
+        display: inline-block;
+        margin-left: 50px;
+        font-family: var(--secondary-font);
+        font-style: var(--font-style-light);
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    .link_box
+    {
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+
+    .title 
+    {
+        font-family: var(--principal-font);
+        font-style: var(--font-style-regular);
+        font-size: var(--font-title-size);
+        color: var(--white);
+        margin: 0;
+    }
+
+    .text-box
+    {
+       width: 680px;
+    }
+    
+    p 
+    {
+    font-family: var(--secondary-font);
+    font-style: var(--font-light);
+    font-size: var(--font-size-body);
+    line-height: var(--line-spacing);
+    color: var(--white);
+    }
+
+    .portfolio_buttom 
+    {
+      color: var(--white);
+      background-color: var(--orange);
+      border:none;
+      font-family: var(--secondary-font);
+      font-style: var(--font-medium);
+      font-size: var(--font-size-button);
+      letter-spacing: var(--unnamed-character-spacing-0);
+      padding: 8px 50px;
+    }
+
+    .grid-container
+    {
+        width: 585px;
+        max-width: 1000px;
+        /*
+        height: 100%; ->  i suppose i need a width and a height to can use the object fit property correctly
+        object-fit: cover;  -> For to make that images is cover all container and conserve the aspect relation image
+        BUT THIS S**T DOES´NT WORK!
+        */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+
+        
+    }
+
+    .img_item
+    {
+        
+        background-color:rgb(37, 163, 236);
+        border-radius: 4px;
+
+    }
+
+   
+
+    .img4
+    {
+        grid-column: span 3 / auto;
+    }
+
+    
+   
+
+    /* R E A D   T H E   N E X T   L I N K 
+    https://blog.prototypr.io/a-pragmatic-guide-to-designing-and-building-responsive-web-applications-ff625dd2f206
+    
+    https://www.youtube.com/watch?v=cFV2F_XWZ_o
+
+    USE NEW LAPTOP SIZE DESIGN
+    */
