@@ -21,17 +21,29 @@
     /* Character Styles */
 
 
+    
     body
     {
-        background-size: contain;
-        background: linear-gradient( rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8) ), url(../images/render.png);
+        /* border: 10px solid #FF950A;*/
+        background-image: linear-gradient( rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8) ), url("../images/render.png");
+        background-size: cover;
         background-repeat: no-repeat;
+        max-width: 100vw;
         min-height: 100vh;
+        
     }
+
+  .main-container
+  {
+       display: flex;
+       align-items: flex-start;
+       margin:150px 80px;
+     
+  }
+
 
     header
     {  
-        
         height: 60px;
         background: var(--black) 0% 0%  padding-box;
         display: flex;
@@ -44,11 +56,10 @@
         left: 0;
     }
 
-    .page-container
+    .link_box
     {
         display: flex;
-        align-items: flex-start;
-       margin:108px 80px;
+        justify-items: center;
     }
 
     .menu_link
@@ -61,7 +72,7 @@
         color: var(--white);
     }
 
-    .link_box
+    .link_contain
     {
         height: 60px;
         display: flex;
@@ -80,6 +91,7 @@
     .text-box
     {
        width: 680px;
+       
     }
     
     p 
@@ -105,36 +117,59 @@
 
     .grid-container
     {
-        width: 585px;
-        max-width: 1000px;
-        /*
-        height: 100%; ->  i suppose i need a width and a height to can use the object fit property correctly
-        object-fit: cover;  -> For to make that images is cover all container and conserve the aspect relation image
-        BUT THIS S**T DOES´NT WORK!
-        */
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 10px;
-
         
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax (3, 1fr));
+        grid-auto-rows: 262px;
+        grid-auto-columns: 179px;
+        grid-gap: 10px;
+        margin:0 0 0 150px;
+        
+      
     }
 
     .img_item
-    {
-        
-        background-color:rgb(37, 163, 236);
+    { 
         border-radius: 4px;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
 
     }
 
-   
+    .img1
+    {
+        
+        background-image: url(../images/1.png);
+      
+    }
+
+
+    .img2
+    {
+        
+        background-image: url(../images/2.png);
+    }
+
+
+    .img3
+    {
+        
+        background-image: url(../images/3.png);
+    }
+
+
 
     .img4
     {
         grid-column: span 3 / auto;
+      background-image: url(../images/4.png);
     }
 
-    
+
+
    
 
     /* R E A D   T H E   N E X T   L I N K 
@@ -142,5 +177,6 @@
     
     https://www.youtube.com/watch?v=cFV2F_XWZ_o
 
-    USE NEW LAPTOP SIZE DESIGN
+    grid-template-areas:"img1 img2 img3" "img4"
+
     */
