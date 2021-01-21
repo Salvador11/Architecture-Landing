@@ -2,9 +2,12 @@
    {
 
     /* Colors: */
-    --white: #FFFFFF;
+    --white: #ffffff;
+    --white-opacity:rgba(255,255,255,0.500);
     --orange: #FF950A;
+    --orange-hover:rgb(253, 174, 71);
     --black: #131313;
+    --black-opacity:rgba(18, 18, 19, 0.74);
     
     /* Font/text values */
     --secondary-font: Roboto;
@@ -20,7 +23,9 @@
     
     /* Character Styles */
 
-
+    html, body {
+        overflow: hidden; /*Body scroll lock*/
+      }
     
     body
     {
@@ -69,8 +74,20 @@
         font-family: var(--secondary-font);
         font-style: var(--font-style-light);
         text-decoration: none;
+        color: var(--white-opacity);
+        font-size: 1rem;
+    }
+
+    a:hover 
+    {
         color: var(--white);
     }
+
+    .hamburguer:hover
+    {
+        background-color: darkmagenta;
+        cursor: pointer;
+    } /*Get the path of svg for give style them */
 
     .link_contain
     {
@@ -115,6 +132,12 @@
       padding: 8px 50px;
     }
 
+    .portfolio_buttom:hover
+    {
+        background-color: var(--orange-hover);
+        cursor: pointer;
+    }
+
     .grid-container
     {
         
@@ -130,12 +153,67 @@
 
     .img_item
     { 
+        width: 100%;
+        height: 100%;
         border-radius: 4px;
         background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
         color: var(--white);
+        
+        overflow: hidden;
+    }
+
+    .parent-content
+    {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 50px;
+        background-image: linear-gradient(to bottom, transparent, black) ;
+        transition: 0.3s;
+    }
+
+    .img_item:hover .parent-content
+    {
+        top: 0;
+    }
+
+    .child-content
+    {
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 14px;
+
+    }
+    span 
+    {
+       font-family: var(--secondary-font);
+       font-style: var(--font-light);
+       font-size: var(--font-size-body);
+    }
+
+    .see-btn
+    {
+        width: 90px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: rgba(255,255,255,0.2);      
+        color: var(--white); 
+        border:none;
+        cursor: pointer;
+    }
+
+    .see-btn:hover 
+    {
+        background-color: rgba(255,255,255,0.5);      
 
     }
 
@@ -168,15 +246,12 @@
       background-image: url(../images/4.png);
     }
 
-
-
    
 
     /* R E A D   T H E   N E X T   L I N K 
-    https://blog.prototypr.io/a-pragmatic-guide-to-designing-and-building-responsive-web-applications-ff625dd2f206
-    
-    https://www.youtube.com/watch?v=cFV2F_XWZ_o
 
-    grid-template-areas:"img1 img2 img3" "img4"
+    https://stackoverflow.com/questions/49327674/css-grid-and-transform-images-overflow-and-overlap
+    https://css-tricks.com/zooming-background-images/
+    https://www.youtube.com/watch?v=Rjbcmubs4L4
 
     */
